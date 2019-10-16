@@ -1,0 +1,153 @@
+    \documentclass[12pt]{article}
+    
+    \usepackage[margin=1.25in]{geometry} 
+    \usepackage{amsmath,amsthm,amssymb} 
+    \usepackage{tikz}
+    \usepackage[capposition=top]{floatrow}
+    \usepackage{indentfirst}
+    \usepackage{amsmath}
+    \usepackage{wrapfig}
+
+    %\linespread{1.5}
+
+    \begin{document}
+    
+\title{Balcony Height Lab Report}
+\author{AP Physics | B Block\\
+	\\
+	Ryan McCrystal\\
+	Kala'i Anderson\\
+Bella Otterson}
+\date{\today}
+\maketitle
+\newpage
+\begin{abstract} % Include purpose, methodologies, assumptions, and brief statement of results
+	The purpose of this experiment is to calculate the height of the Cooper House balcony as accurately as possible and to determine which method is the most accurate. Two different methods were used to calculate the height of the balcony. The first method we used involved creating two similar triangles by placing a pole of known length a distance away from the ground directly below the balcony. Using this setup, one of our group members aligned their eye to be col-linear to the top of the pole and the balcony. Using these measurements, we were able to mathematically construct two similar triangles giving us a calculated height of $15.4ft\pm1.4ft$. The second method we used to indirectly calculate the height of the balcony involved a tennis ball, a stopwatch, and the appropriate kinematic equations. One of our group members dropped a ball at the top of the railing while another group member timed the amount of time it took for the ball to hit the ground. Because we know the ball's acceleration due to the constant force of gravity, we could indirectly calculate the height of the railing. This method provided us with a much more inaccurate result of  $12.6ft\pm8.12ft$. 
+\end{abstract}
+\newpage
+    
+\section{Approach} %Include a detailed description of the procedures and relevant diagram(s) of the physical layout. Specify measurement apparatus and equipment used.
+\subsection{Similar Triangles}
+The first method we used to indirectly calculate the height of the Cooper House balcony was with similar triangles. We positioned a wooden pole perpendicular to the ground and had one of our group members stand a distance away from the pole aligning the very top of the pole to the edge of the balcony. By measuring the height of the pole, the distance of the meter stick to the bottom of the building, the height of our group member's eyes, and the distance from our group member's eyes to the pole, we were able to create two similar triangles allowing us to indirectly calculate the height of the balcony.
+\begin{figure}[H]       % Figure showing more broadly our setup
+	\centering
+	\begin{tikzpicture}[scale=1]
+		\draw[dashed] -- node [left] {\text{Perspective}} (0,0)
+        -- (6,3);
+        \draw[line width=0.4mm] (6,3) -- (6,0) node[midway,right] {Balcony height};
+        \draw[dashed] (6,0) -- (2,0);
+		\draw[dashed] (2,0) -- (0,0);
+		\draw[line width=0.4mm] -- (2,0) -- (2,1) node[midway,right] {Pole};
+		\draw[dashed] -- (6,3) -- (6.5,3) node[midway,above] {$10in$} node[right] {\text{Balcony edge}};
+    \end{tikzpicture}
+    \caption{Our setup}
+\end{figure}
+
+\subsection{Kinematic Equations}
+Using a stopwatch and a tennis ball we timed the time it took for the tennis ball to be dropped from the top of the balcony to the ground. Using kinematic equations we can calculate the height of the balcony given our collected information and assuming a constant gravity of $9.8\frac{m}{s^2}$.
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}[scale=0.75]
+		\draw[->,dashed] -- (0,5) -- (0,0);
+		\filldraw (0,3.5) node[right]{ball} circle (3pt);
+		\draw -- (-.5,0) -- (.5,0);
+		\draw -- (.5,0) -- (4,0) node[midway,above]{ground};
+		\draw -- (-.5,5) -- (.5,5);
+		\draw -- (.5,5) -- (4,5) node[midway,above]{balcony};
+    \end{tikzpicture}
+    \caption{Kinematic equations setup}
+\end{figure}
+
+\section{Calculations} % include a detailed presentation of the data, calculations, and other relevant diagrams. Specify uncertainty of measured values. Pay attention tl significant figures.
+\subsection{Similar Triangles}
+The data our group gathered is as follows:
+\begin{equation}
+	\begin{aligned}
+		\text{Distance from eyes to meter stick}     & =X_1 & =41cm\pm 2cm      \\
+		\text{Distance from meter stick to building} & =X_2 & =455.9cm\pm 3cm   \\
+		\text{Distance from eyes to top of the pole} & =Y   & =25\pm 1cm        \\
+		\text{Height of eyes above ground}           & =H_2 & =157.8cm\pm 1.2cm 
+	\end{aligned}
+\end{equation} \par
+After gathering the data, we created two similar triangles representing our measurements like so:
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}[scale=1.5]
+		\draw -- node [left] {\text{Perspective}} (0,0)
+		-- (6,3) -- (6,0) node[midway,right] {$H_1$} -- (2, 0) node[midway,below] {$X_2$}
+		-- (0,0) node[midway,below] {$X_1$};
+		\draw -- (2,0) -- (2,1) node[midway,right] {$Y$};
+		\draw[dashed] -- (0,0) -- (0,-1) node[midway,left] {$H_2$};
+		\draw[dashed] -- (6,3) -- (6.5,3) node[midway,above] {$10in$} node[right] {\text{Balcony edge}};
+	\end{tikzpicture}
+	\begin{minipage}{0.5\textwidth}    % Margin text
+		\caption{Similar triangles we used to indirectly calculate the height of the balcony}
+		{\footnotesize Note: $H_1$ is the height of the balcony without taking the height of the eyes into account. 10 inches is added to account for the balcony being inlaid from the wall.\par}
+	\end{minipage}
+\end{figure}
+Using the angle-angle similarity postulate, we can conclude that
+$$\frac{Y}{X_1}=\frac{H_1}{X_1+X_2+(10in)}$$
+therefore,
+$$H_1=\frac{Y}{X_1}(X_1+X_2+(10in))$$
+Plugging in the our measurements:
+\begin{equation}
+	\begin{aligned}
+        H_1 & =\frac{25cm\pm1cm}{41cm\pm2cm}((41cm\pm2cm)+(455.9cm\pm3cm)+(10in)) \\
+        & =318.4cm\pm40.2cm\\
+            H_{tot} & =H_1 + H_2 \\
+            &=318.4cm\pm40.2cm+157.8cm\pm1.2cm \\
+		    & =476.2cm\pm41.4cm \\
+		    & \approx\boxed{15.4ft\pm1.4ft}
+	\end{aligned}
+\end{equation}
+\subsection{Kinematic Equations}
+To reduce our possible inaccuracy, we timed the amount of time it took for the tennis ball to reach the ground twenty times.\par
+The data we gathered is as follows:
+\begin{table}[H]
+	\begin{tabular}{ll}
+		1.060 & 0.810 \\
+		0.870 & 0.810 \\
+		0.780 & 0.810 \\
+		0.830 & 1.000 \\
+		0.810 & 1.030 \\
+		1.030 & 0.840 \\
+		0.780 & 0.830 \\
+		0.870 & 1.080 \\
+		0.860 & 0.810 \\
+		0.860 & 0.930 \\
+	\end{tabular}
+	\caption{Seconds timed for each tennis ball drop}
+	\label{tab:times}
+\end{table}
+Using these measurements and assuming an uncertainty of $\pm0.25s$, we calculated the average time to be $0.885s\pm0.25s$.
+\par
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+		\draw[->,dashed] -- (0,5) -- (0,0) node[midway,left]{$t=0.885s$};
+		\filldraw (0,3.5) node[right]{ball} circle (3pt);
+		\draw -- (-.5,0) -- (.5,0) node[midway,below]{$y_1=?$};
+		\draw -- (.5,0) -- (4,0) node[midway,above]{ground};
+		\draw -- (-.5,5) -- (.5,5) node[midway,above]{$y_0=0,v_0=0$};
+		\draw -- (.5,5) -- (4,5) node[midway,above]{balcony};
+		\node at (3,3){$g=9.8\frac{m}{s^2}$};
+		\node at (3.5,2){$\Delta y=v_0t+\frac{1}{2}gt^2$};
+    \end{tikzpicture}
+    \caption{Kinematic equations setup}
+\end{figure}
+
+Using the second kinematic equation (with slight modifications to variable names), assuming $h_0=0$, $v_0=0$, and $g=9.8\frac{m}{s^2}$,
+\begin{equation}
+	\begin{aligned}
+		h&=h_0+v_0t-\frac{1}{2}gt^2\\
+		&=-\frac{1}{2}gt^2\\
+		-h & =\frac{1}{2}(9.8\frac{m}{s^2})(0.885s\pm0.25s)^2 & \text{\footnotesize{$-h$ accounts for the downward direction}} \\
+		&=3.837m\pm2.476m\\
+		&\approx\boxed{12.6ft\pm8.12ft}
+	\end{aligned}
+\end{equation}
+
+\section{Results and Conclusions} % Were the resulting values what you expected? Why or why not? Make sure to indicate any significant sources of error, or how you would conduct the experiment next tome to improve the accuracy of your results. Was one method better than the other? if so, why?
+% say which measurement is more accurate and why
+After reviewing these two methods, our group determined that using the similar triangles method would warrant a more accurate result, and the uncertainty confirms this. The similar triangles method allows us to much more easily calculate accurate results, while the kinematic equations method, though much easier, provides much less accurate results due to the need to accurately time small time discrepancies. To improve the accuracy of the kinematic equations method, instead of timing by hand a slow motion camera and a robot which predictably drops the tennis ball could be used to further the accuracy of the data. For the similar triangles method, instead of aligning a group member's eye to the top of the pole and the top of the balcony, we could measure the distance a shadow makes (assuming the sun is in the right place) with the balcony and with the pole creating two similar triangles as before.
+\end{document}
