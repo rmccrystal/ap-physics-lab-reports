@@ -1,0 +1,24 @@
+\contentsline {section}{\numberline {1}Approach}{4}% 
+\contentsline {subsection}{\numberline {1.1}Elastic Collisions}{5}% 
+\contentsline {subsection}{\numberline {1.2}Inelastic Collisions}{5}% 
+\contentsline {subsection}{\numberline {1.3}Recoil}{6}% 
+\contentsline {section}{\numberline {2}Calculations}{8}% 
+\contentsline {subsection}{\numberline {2.1}Derivation of Equations}{8}% 
+\contentsline {subsubsection}{\numberline {2.1.1}Elastic Collisions}{8}% 
+\contentsline {subsubsection}{\numberline {2.1.2}Inelastic Collisions}{8}% 
+\contentsline {subsubsection}{\numberline {2.1.3}Recoil}{8}% 
+\contentsline {subsection}{\numberline {2.2}Example Calculations}{9}% 
+\contentsline {subsubsection}{\numberline {2.2.1}Elastic Collisions With Springs}{9}% 
+\contentsline {subsubsection}{\numberline {2.2.2}Elastic Collisions With Magnets}{9}% 
+\contentsline {subsubsection}{\numberline {2.2.3}Inelastic Collisions With Springs}{9}% 
+\contentsline {subsubsection}{\numberline {2.2.4}Inelastic Collisions Without Springs}{10}% 
+\contentsline {subsubsection}{\numberline {2.2.5}Inelastic Collisions With Magnets}{10}% 
+\contentsline {subsubsection}{\numberline {2.2.6}Recoil}{10}% 
+\contentsline {section}{\numberline {3}Results and Conclusions}{11}% 
+\contentsline {section}{\numberline {A}Appendix}{14}% 
+\contentsline {subsection}{\numberline {A.1}Elastic Collisions With Springs}{14}% 
+\contentsline {subsection}{\numberline {A.2}Elastic Collisions With Magnets}{14}% 
+\contentsline {subsection}{\numberline {A.3}Inelastic Collisions With Springs}{15}% 
+\contentsline {subsection}{\numberline {A.4}Inelastic Collisions Without Springs}{15}% 
+\contentsline {subsection}{\numberline {A.5}Inelastic Collisions With Magnets}{16}% 
+\contentsline {subsection}{\numberline {A.6}Recoil}{16}% 

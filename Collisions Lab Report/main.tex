@@ -5,7 +5,9 @@
 
 %% Double Spacing
 \usepackage{setspace}
-%%\doublespacing
+\usepackage{etoolbox}
+\AtBeginEnvironment{equation}{\singlespacing}
+\AtBeginEnvironment{table}{\singlespacing}
 
 %% Vector based fonts instead of bitmaps
 \usepackage{lmodern}
@@ -27,8 +29,11 @@
 %% Including other files
 \usepackage{subfiles}
 
-%% Better positionings for diagrams
+%% Better positioning for diagrams
 \usepackage{float}
+
+%% Cancel variables to zero
+\usepackage{cancel}
 
 %% Appendix
 \usepackage{appendix}
@@ -41,16 +46,20 @@
 \begin{document}
 \maketitle
 \newpage
+\singlespacing
+\tableofcontents
+\doublespacing
+\newpage
 
 %% Summary of experiment, major assumptions, summary of results
 \begin{abstract}
-The purpose of this experiment is to determine the weight of a glider on a frictionless airtrack and the most accurate method for doing so. To do this, the air track was set up with two photogates measuring the speeds of two gliders before and a collision between them. Our setups consisted of an inelastic collision with springs, without springs, and with magnets, an elastic collision with magnets and with springs, and two gliders recoiling off of each other with magnets. Due to the (assumed) conservation of momentum in these collisions, the equation $m_1v_1+m_2v_2=m_1v_1'+m_2v_2'$ can be used to calculate $m_2$, the mass of the second glider given the mass $m_1$, the mass of the first glider which the group measured. Assumptions other than ideal conservation of momentum include negligible friction and constant velocities for both gliders. (hypothesis, and results \& Conclusions) % TODO
+The purpose of this experiment is to determine the weight of a glider on a frictionless airtrack and the most accurate method for doing so. To do this, the air track was set up with two photogates measuring the speeds of two gliders before and after a collision between them. Our setups consisted of an inelastic collision with springs, without springs, and with magnets, an elastic collision with magnets and with springs, and two gliders recoiling off of each other with magnets. Due to the (assumed) conservation of momentum in these collisions, the conservation of momentum equation was used to calculate the mass of the second glider given the mass of the first glider which the group measured before conducting the experiment. Assumptions other than ideal conservation of momentum include negligible friction and constant velocities for both gliders. After conducting all of the trials, we determined that the most accurate method was the elastic collision using springs method with a percent inaccuracy of only $0.09\%$. % TODO
 \end{abstract}
 \newpage
 
 \section{Approach}
 
-% describe what a fricitonless airtrack is
+% describe what a frictionless airtrack is
 % describe the photogates
 In the experiment, a frictionless air track, two photogates, a timer for the photogates, and two gliders setup to emulate certain types of collisions were used. A frictionless airtrack is a triangular prism with many small holes in it releasing pressured air created by a pump. This air slightly levitated each glider to reduce the friction between the glider and the track as much as possible. On the air track, two photogates were positioned which connected to the timer which displayed the velocities it recorded. These photogates had an LED and a light sensor which could measure the time something was passed through it. On each glider, there was a small flag which would pass through the photogate. The photogate would find the time the led was covered for by the flag and using that information it could determine the speed of said glider. Before we began the experiment, the track was leveled by turning on the pump, placing a glider on the track, and adjusting the hight of each side of the track to reduce the force of gravity on the glider as much as possible. The glider setup was slightly modified to emulate the type of collision for each trial. The respective setups are shown below.
 \begin{figure}[H]
@@ -83,32 +92,117 @@ For each method, 5 trials were conducted to get as accurate of measurements as p
 
 \newpage
 \section{Calculations}
+The full set of data can be found in the appendix.
 \subsection{Derivation of Equations}
 \subsubsection{Elastic Collisions}
+\begin{equation}
+    \begin{aligned} m_av_a+\cancelto{0}{m_bv_b}&=m_av_a'+m_bv_b' & \text{\footnotesize{Conservation of Momentum}}\\
+        m_bv_b'&=m_av_a-m_av_a' \\
+        m_bv_b'&=m_a(v_a-v_a') \\
+        m_b&=\frac{m_a(v_a-v_a')}{v_b'}
+    \end{aligned}
+\end{equation}
 \subsubsection{Inelastic Collisions}
+\begin{equation}
+    \begin{aligned}
+        m_av_a+\cancelto{0}{m_bv_b}&=m_av_a'+m_bv_b' & \text{\footnotesize{Conservation of Momentum}} \\
+        m_av_a&=m_av'+m_bv' & \text{\footnotesize note: $v_a'=v_b'$} \\
+        m_bv'&=m_av_a-m_av' \\
+        m_bv'&=m_a(v_a-v') \\
+        m_b&=\frac{m_a(v_a-v')}{v'}
+    \end{aligned}
+\end{equation}
 \subsubsection{Recoil}
-
+\begin{equation}
+    \begin{aligned}
+        \cancelto{0}{m_av_a}+\cancelto{0}{m_bv_b}&=m_av_a'+m_bv_b' & \text{\footnotesize{Conservation of Momentum}} \\
+        m_bv_b'&=-m_av_a' \\
+        m_b&=\frac{-m_av_a'}{v_b'}
+    \end{aligned}
+\end{equation}
 \subsection{Example Calculations}
 \subsubsection{Elastic Collisions With Springs}
+\begin{equation}
+    \begin{aligned}
+        m_b&=\frac{m_a(v_a-v_a')}{v_b'} \\
+        &=\frac{189.4g(16.2\frac{cm}{s}-(-3.8\frac{cm}{s}))}{11.1\frac{cm}{s}} \\
+        &=341.26g\rightarrow341.3g
+    \end{aligned}
+\end{equation}
 \subsubsection{Elastic Collisions With Magnets}
+\begin{equation}
+    \begin{aligned}
+        m_b&=\frac{m_a(v_a-v_a')}{v_b'} \\
+        &=\frac{225.5g(46.9\frac{cm}{s}-(-9.5\frac{cm}{s}))}{28.2\frac{cm}{s}} \\
+        &=451.0g
+    \end{aligned}
+\end{equation}
 \subsubsection{Inelastic Collisions With Springs}
+\begin{equation}
+    \begin{aligned}
+        m_b&=\frac{m_a(v_a-v')}{v'} \\
+        &=\frac{189.4g(21.5\frac{cm}{s}-8\frac{cm}{s})}{8\frac{cm}{s}} \\
+        &=319.61g\rightarrow319.6g
+    \end{aligned}
+\end{equation}
 \subsubsection{Inelastic Collisions Without Springs}
+\begin{equation}
+    \begin{aligned}
+        m_b&=\frac{m_a(v_a-v')}{v'} \\
+        &=\frac{193.5g(20.2\frac{cm}{s}-5.6\frac{cm}{s})}{5.6\frac{cm}{s}} \\
+        &=504.48g\rightarrow504.5g
+    \end{aligned}
+\end{equation}
 \subsubsection{Inelastic Collisions With Magnets}
+\begin{equation}
+    \begin{aligned}
+        m_b&=\frac{m_a(v_a-v')}{v'} \\
+        &=\frac{225.5g(26.9\frac{cm}{s}-10.4\frac{cm}{s})}{10.4\frac{cm}{s}} \\
+        &=357.76g\rightarrow357.8g
+    \end{aligned}
+\end{equation}
 \subsubsection{Recoil}
+\begin{equation}
+    \begin{aligned}
+        m_b&=\frac{-m_av_a'}{v_b'} \\
+        &=\frac{-(225.5g)(-21.1\frac{cm}{s})}{9.5\frac{cm}{s}} \\
+        &=500.85g\rightarrow500.8g
+    \end{aligned}
+\end{equation}
 
 \newpage
 \section{Results and Conclusions}
+The most accurate method was the method with elastic collisions with springs. This method produced a mass of B of $340.4g$, only $0.09\%$ off from the actual mass of B: $340.1g$. The second most accurate method was the inelastic collision with springs, followed by the inelastic collision with magnets, the inelastic collision without springs, the recoil method, and the least accurate method was the elastic collision with magnets.
 
+Each method had it's own uncertainties of varying magnitude due to different reasons. Although the most accurate method, the elastic collision with springs almost perfectly emulated an ideal elastic collision, a very small amount of energy could be lost due to friction between the two springs. Despite this, the method was by far the most accurate because they springs could store the kinetic energy and release almost exactly the same amount.
+
+The least accurate method was the elastic collision with magnets with an uncertainty of $40.9\%$. This inaccuracy was likely caused by external forces caused by the magnetic attraction of the gliders. When the glider was placed on the track, it seemed to have a constant force going one direction. Another possible reason for this external force is the glider being weighed down on one side because of the weight of the magnet. This would cause the air from the airtrack to shoot out one direction, and the fact that the glider moved towards the side the magnet was not on reinforces this. To mitigate this, a weight of similar weight to the magnets could be installed on the other side of the glider in order to balance it out. The other method with magnets, the inelastic collision with magnets method, had a difference of $11.1\%$.
+
+The inelastic collision with velcro and springs method had a difference of only $3.5\%$, only slightly more inaccurate than the previous method. The velcro held the two carts together so the collision would be inelastic and the springs would help reduce the energy loss due to friction by dampening the collision. When the springs were removed and the velcro was placed directly on the glider, the inaccuracy increased to $29.3\%$. This was because the springs were not there anymore to dampen the collision and significantly more energy was lost due to friction in the velcro, as all of the energy had to travel through that.
+
+The recoil method had a difference of $25.6\%$. When we released the two gliders after them being held together, we noticed that the two gliders were lifted off the track which we had to compensate for by increasing the distance between the gliders. Although this effect was much less noticeable after increasing the distance, it was still there which could be a source for uncertainty. Another source of uncertainty is the external forces that the magnets create descried above.
+
+In conclusion, the most accurate method was the elastic collision with springs method. As said before, the springs provided very little friction and could store the kinetic energy during the collision extremely efficiently. After conducting five trials with this method, it produced a result of $340.4g$, only $0.3g$ off from the actual mass of the glider: $340.1g$. Although this remains the most accurate method, the closeness of the produced result to the actual weight could have been due to mere chance as the results for each trial varied up to $2.2\%$ from the average. Taking more trials with this method could further determine exactly how accurate it is. 
 \newpage
 \appendix
-\section{Raw data}
-\subsection{Elastic Collisions}
-\subsubsection{Elastic Collisions With Springs}
-\subsubsection{Elastic Collisions With Magnets}
-\subsection{Inelastic Collisions}
-\subsubsection{Inelastic Collisions With Springs}
-\subsubsection{Inelastic Collisions Without Springs}
-\subsubsection{Inelastic Collisions With Magnets}
+\singlespacing
+\section{Appendix}
+\subsection{Elastic Collisions With Springs}
+\subfile{data/elastic-springs}
+
+\subsection{Elastic Collisions With Magnets}
+\subfile{data/elastic-magnets}
+
+\subsection{Inelastic Collisions With Springs}
+\subfile{data/inelastic-springs}
+
+\subsection{Inelastic Collisions Without Springs}
+\subfile{data/inelastic-glider}
+
+\subsection{Inelastic Collisions With Magnets}
+\subfile{data/inelastic-magnets}
+
 \subsection{Recoil}
+\subfile{data/recoil}
 
 \end{document}
