@@ -50,7 +50,6 @@ The purpose of this experiment is to determine the weight of a glider on a frict
 
 \section{Approach}
 
-\subsection{Setup}
 % describe what a fricitonless airtrack is
 % describe the photogates
 In the experiment, a frictionless air track, two photogates, a timer for the photogates, and two gliders setup to emulate certain types of collisions were used. A frictionless airtrack is a triangular prism with many small holes in it releasing pressured air created by a pump. This air slightly levitated each glider to reduce the friction between the glider and the track as much as possible. On the air track, two photogates were positioned which connected to the timer which displayed the velocities it recorded. These photogates had an LED and a light sensor which could measure the time something was passed through it. On each glider, there was a small flag which would pass through the photogate. The photogate would find the time the led was covered for by the flag and using that information it could determine the speed of said glider. Before we began the experiment, the track was leveled by turning on the pump, placing a glider on the track, and adjusting the hight of each side of the track to reduce the force of gravity on the glider as much as possible. The glider setup was slightly modified to emulate the type of collision for each trial. The respective setups are shown below.
@@ -59,17 +58,28 @@ In the experiment, a frictionless air track, two photogates, a timer for the pho
     \subfile{diagrams/airtrack} % Include the file
     \caption{The General Setup}
 \end{figure}
-\subsubsection{Elastic Collisions}
-In this method, the two gliders were setup to undergo an elastic collision. In one setup, the magnets were attached to the gliders which would repel each other to emulate an elastic collision and the other setup, springs were attached to each glider to also emulate an elastic collision. Two different methods were used to determine which method was the most accurate. Glider 2 was held stationary on the track and glider 1 was pushed through the first photogate where it then maintained a constant speed until colliding with glider 1. Upon collision, glider 1 would bounce back and go through photogate 1 and glider 2 would pass through photogate 2. Using this data and the mass of glider 1 which varied with springs and magnets, the mass of glider 2 could be calculated.
-\begin{figure}[H]
+\subsection{Elastic Collisions}
+In this method, the two gliders were setup to undergo an elastic collision. In one setup, the magnets were attached to the gliders which would repel each other to emulate an elastic collision and the other setup, springs were attached to each glider to also emulate an elastic collision. Two different methods were used to determine which method was the most accurate. Glider 2 was held stationary on the track and glider 1 was pushed through the first photogate where it then maintained a constant speed until colliding with glider 2. Upon collision, glider 1 would bounce back and go through photogate 1 and glider 2 would pass through photogate 2. Using this data and the mass of glider 1 which varied with springs and magnets, the mass of glider 2 could be calculated.
+\begin{figure}[H] % TODO: Before and after
     \centering
     \subfile{diagrams/elastic}
     \caption{Elastic Collision Setup}
 \end{figure}
-\subsubsection{Inelastic Collisions}
-In this method, the two gliders were setup to undergo an inelastic collision. In one setup, velcro was attacked to the springs to ensure the two gliders would not separate after they collided, in another velcro was attached to the glider itself, and in the third, magnets were situated on each glider to attract each other.
-\subsubsection{Recoil}
-\subsection{Taking Measurements}
+\subsection{Inelastic Collisions}
+In this method, the two gliders were setup to undergo an inelastic collision. In one setup, velcro was attacked to the springs to ensure the two gliders would not separate after they collided, in another velcro was attached to the glider itself, and in the third, magnets were situated on each glider to attract each other. Similar to the elastic collision setup, glider 2 was held stationary on the track and glider 1 was pushed through the first photogate where it maintained a constant speed until colliding with glider 2. After the collision, the two gliders would stick together and pass through the second photogate at a reduced speed. Using this data and the mass of glider 1 which varied with velcro with springs, velcro, and with magnets, the mass of glider 2 could be calculated.
+\begin{figure}[H]   % TODO: Before and after
+    \centering
+    \subfile{diagrams/inelastic} % Include the file
+    \caption{Inelastic Collision Setup}
+\end{figure}
+\subsection{Recoil}
+In this last method, two magnets which repelled each other were installed on each glider. These two gliders were held close together to allow a sufficient speed through the photogates, but not too close so they wouldn't fly off the track. After releasing the two gliders, they repelled off each other where they would go through both photogates. The mass of glider 2 would then be calculated using the speed of each glider after they repelled each other and the mass of glider 1.
+\begin{figure}[H]   % TODO: Before and after
+    \centering
+    \subfile{diagrams/recoil} % Include the file
+    \caption{Recoil Setup}
+\end{figure}
+For each method, 5 trials were conducted to get as accurate of measurements as possible and to determine how inaccurate each method was. Because the photogates measure speed and not velocity, the velocities were adjusted to match the direction the gliders were moving. To calculate the mass of glider 2, the conservation of momentum equation ($m_1v_1+m_2v_2=m_1v_1'+m_2v_2'$) was used.
 
 \newpage
 \section{Calculations}
